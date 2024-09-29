@@ -1,0 +1,162 @@
+
+.product-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  
+}
+
+
+.error-message {
+  color: #d9534f; 
+}
+
+
+.product-items {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+
+.product-item {
+  position: relative;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 400px;
+}
+
+
+.product-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+.product-gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+}
+
+
+.product-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-gallery:hover .product-info-overlay {
+  opacity: 1;
+}
+
+
+.product-info-overlay .product-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff; 
+}
+
+
+.product-info-overlay .product-separator {
+  border-top: 1px solid #fff;
+  width: 50%;
+  margin: 10px auto;
+}
+
+.product-info-overlay .product-price {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #fff; 
+}
+
+
+.product-details {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+.product-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #3A1212;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .product-items {
+    grid-template-columns: 1fr; 
+    gap: 15px; 
+  }
+
+  .product-item {
+    width: 100vw; 
+    height: auto; 
+    box-sizing: border-box; 
+    margin: 0; 
+  }
+
+  .product-gallery {
+    width: 100%; 
+    height: 300px; 
+    overflow: hidden; 
+  }
+
+  .product-image {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    display: block; 
+  }
+
+  
+  .product-items .product-item:last-child {
+    margin-bottom: 75px !important; 
+  }
+
+  
+  .product-items .product-item:first-child {
+    margin-top: -20px;
+  }
+}

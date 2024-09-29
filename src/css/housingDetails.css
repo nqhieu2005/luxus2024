@@ -1,0 +1,156 @@
+.product-detail {
+    padding: 20px;
+}
+
+/* General section style */
+.section {
+    margin-bottom: 20px;
+}
+
+/* Ensure the name section is visible */
+.section-name {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Section 2: Description and Main Image */
+.section-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the start */
+    margin-bottom: 20px;
+}
+
+/* Adjust the main image container */
+.section-main-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Center horizontally */
+}
+
+/* Main image styling */
+.section-main-image img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Adjust as needed */
+    display: block;
+    
+}
+
+/* Section 3: Full Width Image */
+.section-full-image {
+    width: 100%;
+    height: auto;
+    max-height: 600px; /* Auto height to maintain aspect ratio */
+    margin-bottom: 20px;
+    overflow: hidden;
+    object-fit: cover; /* Hide overflow if necessary */
+}
+  
+.section-full-image img {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 600px;
+    object-fit: cover;
+}
+
+/* Section 4: Additional Images */
+.section-additional {
+    display: flex;
+    flex-wrap: wrap; /* Wrap images to new lines if needed */
+    gap: 10px; /* Space between images */
+    margin-top: 20px;
+}
+
+.section-additional img {
+    flex: 1 1 calc(50% - 10px); /* Adjust width of each image */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure images are not distorted */
+    max-height: 300px; /* Max height for images */
+}
+
+/* Remove right margin for the last image */
+.section-additional img:last-child {
+    margin-right: 0;
+}
+
+/* Details section styling */
+.details-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.details-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px;
+}
+
+.details-item p {
+    margin: 0;
+    text-align: left;
+    word-break: break-word; /* Break long words */
+    overflow-wrap: break-word; /* Break words */
+}
+
+/* Housing details container */
+.housing-details {
+    max-width: 1200px;
+    margin: 0 auto; /* Center horizontally */
+    padding: 40px; /* Add padding if needed */
+}
+
+.section-additional img:last-child {
+    margin-bottom: 45px !important;
+}
+
+
+/* Media queries for mobile */
+@media (max-width: 768px) {
+    .product-detail {
+        padding: 10px;
+    }
+
+    /* Section info: stack vertically for small screens */
+    .section-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Full-width for all images on mobile */
+    .section-main-image img,
+    .section-full-image img,
+    .section-additional img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none; /* Remove any height restrictions */
+        object-fit: cover;
+    }
+
+    /* Section 4: Additional images with equal spacing */
+    .section-additional {
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        gap: 10px; /* Even space between images */
+        margin-top: 20px;
+    }
+
+    /* Ensure last child has bottom margin */
+    .section-additional img:last-child {
+        margin-top: 15px;
+        margin-bottom: 45px !important;
+    }
+
+    .details-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .housing-details {
+        max-width: 100%;
+        padding: 20px;
+    }
+}

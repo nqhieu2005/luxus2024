@@ -1,0 +1,163 @@
+/* office.css */
+
+/* Container for the list of offices */
+.office-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #d9534f;
+  }
+  
+  /* List of office items */
+  .office-items {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Individual office item */
+  .office-item {
+    position: relative;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 400px;
+  }
+  
+  /* Content within the office item */
+  .office-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  /* Gallery area for images */
+  .office-gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* Office image styling */
+  .office-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .office-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Overlay with office information */
+  .office-info-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .office-gallery:hover .office-info-overlay {
+    opacity: 1;
+  }
+  
+  /* Office name and price styling within overlay */
+  .office-info-overlay .office-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .office-info-overlay .office-separator {
+    border-top: 1px solid #fff;
+    width: 50%;
+    margin: 10px auto;
+  }
+  
+  .office-info-overlay .office-price {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #fff;
+  }
+  
+  /* Details of the office */
+  .office-details {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+  }
+  
+  .office-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #3A1212;
+  }
+  
+  .office-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .office-items {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .office-item {
+      width: 100vw;
+      height: auto;
+      box-sizing: border-box;
+      margin: 0;
+    }
+  
+    .office-gallery {
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+  
+    .office-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  
+    .office-items .office-item:last-child {
+      margin-bottom: 75px !important;
+    }
+  
+    .office-items .office-item:first-child {
+      margin-top: -20px;
+    }
+  }
+  

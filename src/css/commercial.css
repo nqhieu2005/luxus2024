@@ -1,0 +1,178 @@
+/* commercial.css */
+
+/* Container for the list of commercial items */
+.commercial-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Error message styling */
+.error-message {
+  color: #d9534f;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Loading message styling */
+.loading-message {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Container for the commercial items */
+.commercial-items {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styling for individual commercial items */
+.commercial-item {
+  position: relative;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  height: 400px;
+}
+
+/* Content within each commercial item */
+.commercial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Gallery within each commercial item */
+.commercial-gallery {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Styling for images within the gallery */
+.commercial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Scale effect on image hover */
+.commercial-image:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay with additional information */
+.commercial-info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay on gallery hover */
+.commercial-gallery:hover .commercial-info-overlay {
+  opacity: 1;
+}
+
+/* Name styling within the overlay */
+.commercial-info-overlay .commercial-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Separator line in the overlay */
+.commercial-info-overlay .commercial-separator {
+  border-top: 1px solid #fff;
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* Price styling within the overlay */
+.commercial-info-overlay .commercial-price {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #fff;
+}
+
+/* Details section for expanded view */
+.commercial-details {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+/* Name styling in the details section */
+.commercial-name {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #3A1212;
+}
+
+/* Description styling in the details section */
+.commercial-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .commercial-items {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .commercial-item {
+    width: 100vw;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .commercial-gallery {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .commercial-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .commercial-items .commercial-item:last-child {
+    margin-bottom: 75px !important;
+  }
+
+  .commercial-items .commercial-item:first-child {
+    margin-top: -20px;
+  }
+}

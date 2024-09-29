@@ -1,0 +1,113 @@
+/* addProduct.css */
+
+.add-product-admin {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-product-admin h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  text-align: center;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+.form-control {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  transform: scale(1.02);
+}
+
+.btn-primary:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background-color: #d5d5d5;
+  color: #000;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Căn chỉnh các nút về bên phải */
+  gap: 1rem;
+  margin-top: 1rem; /* Khoảng cách trên của container nút */
+}
+
+@media (max-width: 768px) {
+  .add-product-admin {
+    padding: 1rem;
+  }
+
+  .add-product-admin h1 {
+    font-size: 2rem;
+  }
+
+  .form-control {
+    font-size: 0.875rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}

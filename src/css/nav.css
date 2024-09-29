@@ -1,0 +1,122 @@
+.navbar {
+    border-bottom: 1px solid #716c6c;
+    background-color: #3A1212;
+    
+}
+
+.navbar-toggler {
+    background-color: #3A1212;
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-nav .nav-link {
+    color: #f1f1f1 !important;
+    padding-right: 0;
+}
+
+.navbar-nav .nav-link:hover {
+    border-radius: 10px;
+    transform: scale(1.05);
+}
+
+.nav-item {
+    position: relative;
+}
+
+.dropdown-menu {
+    background-color: rgba(58, 18, 18, 0.45);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px !important;
+}
+
+.dropdown-menu a {
+    color: #f1f1f1;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+    transform: translateX(5px) scale(1.05);
+}
+/* Điều chỉnh cho màn hình mobile */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed; /* Thay đổi vị trí thành cố định */
+        top: 0;
+        left: 0;
+        background-color: #3A1212;
+        width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
+        height: 50vh; /* Chiều cao bằng một nửa chiều cao màn hình */
+        padding: 1rem;
+        border-bottom: 1px solid #716c6c;
+        z-index: 1050;
+        transform: translateY(-100%); /* Khởi tạo vị trí menu ở trên ngoài màn hình */
+        transition: transform 0.3s ease;
+    }
+
+    .navbar-collapse.show {
+        transform: translateY(0); /* Hiển thị menu khi có class 'show' */
+    }
+
+    .navbar-nav .nav-link {
+        color: #f1f1f1 !important;
+        padding: 10px 20px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+    
+    .navbar-nav .nav-link.dropdown-toggle {
+        padding-right: 20px;
+    }
+    
+    .nav-item {
+        position: relative;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        float: none;
+        background-color: rgba(58, 18, 18, 0.85);
+        box-shadow: none;
+        margin-top: 0;
+        padding-left: 20px; /* Lùi vào 20px từ lề trái */
+    }
+
+    .dropdown-menu a {
+        padding: 10px 20px;
+        color: #f1f1f1;
+    }
+
+    .navbar-collapse .close-btn {
+        display: block; /* Hiển thị nút "X" trên màn hình di động */
+        background: none;
+        border: none;
+        color: #f1f1f1;
+        font-size: 1.5rem;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 1060; /* Đảm bảo nút "X" nằm trên menu */
+    }
+
+    .navbar-collapse .close-btn:hover {
+        color: #007bff;
+    }
+}
+
+/* Ẩn nút "X" trên màn hình lớn */
+@media (min-width: 992px) {
+    .navbar-collapse .close-btn {
+        display: none;
+    }
+}

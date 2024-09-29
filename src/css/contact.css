@@ -1,0 +1,188 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.company-info {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    
+
+
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.company-info img {
+    max-width: 700px;
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.company-details {
+    text-align: left;
+    color: #555;
+    flex-grow: 1;
+
+
+
+
+}
+
+.company-details h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+
+}
+
+.company-details p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #000000;
+}
+
+.company-details p span {
+    font-weight: bold;
+
+
+}
+
+/* Container for the contact buttons */
+.contact-buttons {
+    position: fixed;
+    /* Fix the position of buttons */
+    bottom: 20px;
+    /* Distance from the bottom of the viewport */
+    right: 20px;
+    /* Distance from the right of the viewport */
+    display: flex;
+    flex-direction: column;
+    /* Arrange buttons vertically */
+    gap: 15px;
+    /* Space between buttons */
+    margin-bottom: 100px;
+}
+
+/* Style for each button */
+.contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    /* Default background color */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 24px;
+    animation: shake 0.5s infinite;
+    /* Add shake animation */
+}
+
+/* Specific colors for different buttons */
+.contact-button.facebook {
+    background-color: #3b5998;
+    /* Facebook color */
+}
+
+.contact-button.phone {
+    background-color: #34b7f1;
+    /* Phone color */
+}
+
+.contact-button.zalo {
+    background-color: #0082FC;
+    /* Zalo color */
+}
+
+/* Adjust the size of the contact button for better alignment */
+.contact-button img {
+    width: 24px;
+    /* Adjust size as needed */
+    height: 24px;
+    /* Adjust size as needed */
+}
+
+/* Hover effect */
+.contact-button:hover {
+    opacity: 0.8;
+}
+
+/* Shake animation */
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .company-info {
+        margin: 20px auto;
+        flex-direction: column;
+        margin-bottom: 75px !important;
+        text-align: center;
+
+    }
+
+    .company-details {
+        padding: 15px;
+
+        margin-top: -50px;
+
+    }
+
+    .company-info img {
+        max-width: 100%;
+
+        height: auto;
+
+    }
+}
+
+@media (max-width: 480px) {
+    .company-details h2 {
+        font-size: 20px;
+
+    }
+
+    .company-info img {
+        max-width: 100%;
+        margin-bottom: 75px !important;
+        height: auto;
+
+    }
+
+    .company-details p {
+        font-size: 16px;
+
+    }
+}

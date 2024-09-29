@@ -1,0 +1,150 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.admin-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.admin-header { /* Thêm dấu chấm ở đây */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3A1212;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.admin-header h1 { /* Thêm dấu chấm ở đây */
+  font-size: 24px;
+  margin: 0;
+}
+
+.admin-header button { /* Thêm dấu chấm ở đây */
+  background-color: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-header button:hover { /* Thêm dấu chấm ở đây */
+  background-color: #a93226;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+section {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #3A1212;
+}
+
+section button {
+  background-color: #2980b9;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+section button:hover {
+  background-color: #21618c;
+}
+
+.admin-ul { /* Thêm dấu chấm ở đây */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-li { /* Thêm dấu chấm ở đây */
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-li h3 { /* Thêm dấu chấm ở đây */
+  margin: 0;
+  font-size: 18px;
+  flex: 1;
+}
+
+.admin-li .button-group { /* Thêm dấu chấm ở đây */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-li button { /* Thêm dấu chấm ở đây */
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.admin-li button:hover { /* Thêm dấu chấm ở đây */
+  background-color: #d35400;
+}
+
+/* Thông báo đang lấy dữ liệu */
+.loading-message {
+  color: #3498db;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #eaf2f8;
+  border: 1px solid #3498db;
+  border-radius: 4px;
+  max-width: 600px;
+}
+
+/* Thông báo lỗi */
+.error-message {
+  color: #e74c3c;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fbe9e7;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  max-width: 600px;
+}
+
+/* Ẩn các phần nội dung khi có thông báo lỗi hoặc đang tải dữ liệu */
+.hide-content {
+  display: none;
+}

@@ -1,0 +1,111 @@
+/* Đặt nền cho trang đăng nhập với hình nền */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url('../images/myimg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  padding: 20px;
+}
+
+/* Định dạng tiêu đề trang */
+.login-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #dfd9d9;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Định dạng form đăng nhập */
+.login-form {
+  width: 100%;
+  max-width: 500px;
+  /* Đặt kích thước tối đa của form */
+  background: rgba(255, 255, 255, 0.9);
+  /* Nền trắng với độ trong suốt */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  /* Căn giữa form */
+}
+
+/* Định dạng nhóm các trường nhập liệu */
+.login-form2 {
+  margin-bottom: 20px;
+  width: 350px;
+}
+
+/* Định dạng nhãn của trường nhập liệu */
+.login-form2 {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Định dạng các trường nhập liệu */
+.form-control {
+  width: calc(100% - 24px);
+  /* Chiếm toàn bộ chiều rộng của form-group trừ padding */
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Đặt nền trong suốt cho trường nhập liệu */
+}
+
+/* Định dạng trường nhập liệu khi tập trung */
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.2);
+  outline: none;
+}
+
+/* Định dạng nút bấm */
+.btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hiệu ứng hover cho nút bấm */
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Hiệu ứng cho nút bấm khi bị vô hiệu hóa */
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Đặt vị trí cho thông báo */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+/* Thêm hiệu ứng hover cho trường nhập liệu */
+.form-control::placeholder {
+  color: #aaa;
+  font-style: italic;
+}

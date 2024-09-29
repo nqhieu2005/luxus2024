@@ -1,0 +1,93 @@
+/* home.css */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Đảm bảo body chiếm toàn bộ chiều cao của viewport */
+}
+
+main {
+    flex: 1; /* Đảm bảo main chiếm toàn bộ không gian còn lại giữa Navbar và Footer */
+}
+
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 80vh; 
+    overflow: hidden;
+    display: flex;
+    flex-direction: row; 
+    margin: 0; /* Loại bỏ margin */
+    padding: 0; /* Loại bỏ padding nếu có */
+    object-fit: cover;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image-container img.active {
+    opacity: 1;
+
+}
+
+.btn {
+    background: transparent; /* Chỉ hiển thị mũi tên */
+    border: none; /* Xóa viền */
+    color: black; /* Màu của mũi tên */
+    font-size: 30px; /* Kích thước chữ */
+    cursor: pointer; /* Thay đổi con trỏ khi di chuột */
+    padding: 0; /* Bỏ padding */
+  }
+  
+  .muiten-trai {
+    left: 10px; /* Điều chỉnh khoảng cách từ bên trái */
+  }
+  
+  .muiten-phai {
+    right: 10px; /* Điều chỉnh khoảng cách từ bên phải */
+  }
+  
+  .muiten-trai:hover,
+  .muiten-phai:hover {
+    color: gray;
+  }
+  @media (max-width: 768px) {
+    .image-container {
+        flex-direction: column; 
+        height: auto; 
+        overflow: visible; 
+        padding: 0; 
+        gap: 10px; 
+        margin-top: 0px;
+        padding-bottom: 90px;
+    }
+
+    .muiten-trai,
+    .muiten-phai {
+        display: none; 
+    }
+
+    .image-container img {
+        height: auto; 
+        width: 100%; 
+        opacity: 1; 
+        position: relative; 
+        display: block; 
+        margin: 0; /* Bỏ margin để ảnh sát lề */
+    }
+
+}
+
