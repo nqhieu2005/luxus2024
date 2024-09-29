@@ -9,7 +9,6 @@ const LuxusInterior = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  let intervalId;
 
   useEffect(() => {
     async function fetchImages() {
@@ -43,6 +42,8 @@ const LuxusInterior = () => {
   }, []);
 
   useEffect(() => {
+    let intervalId; // Đặt intervalId ở đây
+
     function showNextImage() {
       setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
     }
@@ -56,7 +57,7 @@ const LuxusInterior = () => {
         clearInterval(intervalId);
       }
     };
-  }, [images]);
+  }, [images]); // Chỉ cần theo dõi 'images'
 
   // Hàm để lùi lại ảnh
   const handlePrev = () => {
@@ -88,11 +89,11 @@ const LuxusInterior = () => {
               />
             ))}
             {/* Nút mũi tên trái */}
-            <button className=" muiten-trai position-absolute top-50 start-0 translate-middle-y" onClick={handlePrev}>
+            <button className="muiten-trai position-absolute top-50 start-0 translate-middle-y" onClick={handlePrev}>
               &lt; {/* Mũi tên trái */}
             </button>
             {/* Nút mũi tên phải */}
-            <button className=" muiten-phai position-absolute top-50 end-0 translate-middle-y" onClick={handleNext}>
+            <button className="muiten-phai position-absolute top-50 end-0 translate-middle-y" onClick={handleNext}>
               &gt; {/* Mũi tên phải */}
             </button>
           </>
