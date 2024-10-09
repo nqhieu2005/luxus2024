@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/home.css';
 import Navbar from './nav';
-import Footer from './foot';
+import { FaFacebookF, FaPhoneAlt } from 'react-icons/fa';
+import { AiOutlineWechat } from 'react-icons/ai';
 
 const LuxusInterior = () => {
   const [images, setImages] = useState([]);
@@ -102,7 +103,41 @@ const LuxusInterior = () => {
         )}
       </main>
 
-      <Footer />
+      <div className="contact-buttons">
+                    <a
+                        href="https://web.facebook.com/Interior.luxus"
+                        className="contact-button facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat Facebook"
+                    >
+                        <FaFacebookF />
+                    </a>
+                    <a
+                        href="https://zalo.me/0376787191"
+                        className="contact-button zalo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat Zalo"
+                    >
+                        <AiOutlineWechat />
+                    </a>
+                    <a
+                        href="tel:+0376787191"
+                        className="contact-button phone"
+                        title="Gọi ngay"
+                    >
+                        <FaPhoneAlt />
+                    </a>
+                </div>
+
+                <div className="about">
+            <p>
+                <a href="https://www.facebook.com/Interior.luxus" target="_blank" rel="noopener noreferrer">Facebook</a>
+              
+            </p>
+            <p>&copy; LUXUS 2024</p>
+        </div>
     </div>
   );
 };

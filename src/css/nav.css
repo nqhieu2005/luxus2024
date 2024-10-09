@@ -1,3 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+}
+
+
 .navbar {
     border-bottom: 1px solid #716c6c;
     background-color: #3A1212;
@@ -43,8 +52,9 @@
 
 .dropdown-menu a:hover {
     background-color: #f1f1f1;
-    color: #007bff;
+    color: #141415;
     transform: translateX(5px) scale(1.05);
+    
 }
 /* Điều chỉnh cho màn hình mobile */
 @media (max-width: 991.98px) {
@@ -54,13 +64,15 @@
         left: 0;
         background-color: #3A1212;
         width: 100%; /* Chiếm toàn bộ chiều rộng màn hình */
-        height: 50vh; /* Chiều cao bằng một nửa chiều cao màn hình */
+        height: 20vh; /* Chiều cao bằng một nửa chiều cao màn hình */
         padding: 1rem;
         border-bottom: 1px solid #716c6c;
         z-index: 1050;
         transform: translateY(-100%); /* Khởi tạo vị trí menu ở trên ngoài màn hình */
         transition: transform 0.3s ease;
     }
+
+    
 
     .navbar-collapse.show {
         transform: translateY(0); /* Hiển thị menu khi có class 'show' */

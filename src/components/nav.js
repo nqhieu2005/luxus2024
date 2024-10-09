@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/nav.css';
 import logo from '../images/z5725037049407_9a59401620e8db106e00537f646305d9.jpg';
 
 const Navbar = () => {
-  // Hàm để đóng menu
-  const handleClose = () => {
-    const element = document.getElementById('navbarSupportedContent');
-    if (element) {
-      element.classList.remove('show'); // Xóa class 'show' để đóng menu
+  const [isExpanded, setIsExpanded] = useState(false); // Quản lý trạng thái mở/đóng menu
+  const [menuHeight, setMenuHeight] = useState('0vh'); // Chiều cao ban đầu của navbar-collapse
+
+  // Hàm toggle chiều cao khi nhấn vào "Dự án"
+  const handleProjectsClick = () => {
+    // Toggle chiều cao giữa 20vh và 40vh
+    if (menuHeight === '0vh' || menuHeight === '20vh') {
+      setMenuHeight('40vh'); // Mở rộng menu
+    } else {
+      setMenuHeight('20vh'); // Thu nhỏ menu lại
     }
+  };
+
+  // Hàm mở/đóng menu
+  const handleToggleMenu = () => {
+    setIsExpanded(prevState => {
+      if (!prevState) {
+        // Khi mở menu, thay đổi chiều cao
+        setMenuHeight('20vh');
+      } else {
+        // Khi đóng menu, trở về chiều cao 0vh
+        setMenuHeight('40vh');
+      }
+      return !prevState; // Toggle trạng thái
+    });
+  };
+
+  // Hàm đóng menu khi nhấn vào nút "X"
+  const handleClose = () => {
+    setIsExpanded(false);  // Đóng menu
+    setMenuHeight('0vh');  // Trở về chiều cao 0vh khi đóng
   };
 
   return (
@@ -25,28 +50,35 @@ const Navbar = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
+          onClick={handleToggleMenu} // Toggle menu khi nhấn vào button
+          aria-expanded={isExpanded}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <div
+          className={`collapse navbar-collapse ${isExpanded ? 'show' : ''}`} // Đảm bảo menu toggle mượt mà
+          id="navbarSupportedContent"
+          style={{
+            height: menuHeight, // Thay đổi chiều cao của menu khi mở rộng
+            transition: 'height 0.3s ease', // Mượt mà khi thay đổi chiều cao
+          }}
+        >
           <button className="close-btn" onClick={handleClose}>
             &times; {/* Ký tự "X" */}
           </button>
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/about">Giới thiệu / About</a>
+              <a className="nav-link active" href="/about">Giới thiệu / About</a>
             </li>
             <li className="nav-item dropdown">
               <button
                 className="nav-link dropdown-toggle"
                 id="navbarDropdown"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
+                aria-expanded={isExpanded ? "true" : "false"}
+                onClick={handleProjectsClick} // Gọi hàm khi nhấn vào "Dự án"
               >
                 Dự án / Projects
               </button>

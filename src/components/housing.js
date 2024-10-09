@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'; // Cập nhật để sử dụn
 import '../css/housing.css';
 import Navbar from './nav';
 import Footer from './foot';
+import { FaFacebookF, FaPhoneAlt } from 'react-icons/fa';
+import { AiOutlineWechat } from 'react-icons/ai';
 
 function Housing() {
   const [products, setProducts] = useState([]);
@@ -113,6 +115,33 @@ const ProductItem = ({ product, onClick }) => {
           </div>
         )}
       </div>
+      <div className="contact-buttons">
+                    <a
+                        href="https://web.facebook.com/Interior.luxus"
+                        className="contact-button facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat Facebook"
+                    >
+                        <FaFacebookF />
+                    </a>
+                    <a
+                        href="https://zalo.me/0376787191"
+                        className="contact-button zalo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat Zalo"
+                    >
+                        <AiOutlineWechat />
+                    </a>
+                    <a
+                        href="tel:+0376787191"
+                        className="contact-button phone"
+                        title="Gọi ngay"
+                    >
+                        <FaPhoneAlt />
+                    </a>
+                </div>
     </li>
   );
 };

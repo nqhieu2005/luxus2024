@@ -43,6 +43,30 @@ main {
 
 }
 
+.about{
+    width: 100%;
+    height: 80px;
+    background-color: #3A1212;
+    padding-top: 20px;
+}
+
+.about a {
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.about a:hover {
+    color: blue;
+}
+
+.about p {
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
 .btn {
     background: transparent; /* Chỉ hiển thị mũi tên */
     border: none; /* Xóa viền */
@@ -72,12 +96,19 @@ main {
         padding: 0; 
         gap: 10px; 
         margin-top: 0px;
-        padding-bottom: 90px;
+        /* padding-bottom: 90px; */
     }
 
     .muiten-trai,
     .muiten-phai {
         display: none; 
+    }
+
+    .about{
+        width: 100%;
+        height: 80px;
+        background-color: #3A1212;
+        padding-top: 16px;
     }
 
     .image-container img {
