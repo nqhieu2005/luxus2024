@@ -17,14 +17,14 @@ const Navbar = () => {
     }
   };
 
-  // Hàm mở/đóng menu
+  
   const handleToggleMenu = () => {
     setIsExpanded(prevState => {
       if (!prevState) {
-        // Khi mở menu, thay đổi chiều cao
+        
         setMenuHeight('20vh');
       } else {
-        // Khi đóng menu, trở về chiều cao 0vh
+        
         setMenuHeight('40vh');
       }
       return !prevState; // Toggle trạng thái
@@ -78,7 +78,7 @@ const Navbar = () => {
                 id="navbarDropdown"
                 data-bs-toggle="dropdown"
                 aria-expanded={isExpanded ? "true" : "false"}
-                onClick={handleProjectsClick} // Gọi hàm khi nhấn vào "Dự án"
+                // onClick={handleProjectsClick} // Gọi hàm khi nhấn vào "Dự án"
               >
                 Dự án / Projects
               </button>

@@ -3,9 +3,10 @@
 import React, { useEffect } from 'react';
 import '../css/about.css';
 import Navbar from './nav';
-import Footer from './foot';
 import images1 from '../images/8.jpg';
 import images2 from '../images/19.jpg';
+import { FaFacebookF, FaPhoneAlt } from 'react-icons/fa';
+import { AiOutlineWechat } from 'react-icons/ai';
 
 const About = () => {
 
@@ -51,9 +52,42 @@ const About = () => {
                         <span className="translated" style={{ color: 'rgb(153, 147, 140)' }}>/ Meticulous attention to detail in every design component is a fundamental principle of our working method. By carefully evaluating each site and each element, we create structures inherently harmonious with their surroundings, environmentally suitable, and reflective of the unique historical context. Above all, the spirit and preferences of the client are of paramount importance in KPA Vietnam’s designs.</span>
                     </p>
                 </div>
+                <div className="contact-buttons">
+                    <a
+                        href="https://web.facebook.com/Interior.luxus"
+                        className="contact-button facebook"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat Facebook"
+                    >
+                        <FaFacebookF />
+                    </a>
+                    <a
+                        href="https://zalo.me/0376787191"
+                        className="contact-button zalo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title="Chat Zalo"
+                    >
+                        <AiOutlineWechat />
+                    </a>
+                    <a
+                        href="tel:+0376787191"
+                        className="contact-button phone"
+                        title="Gọi ngay"
+                    >
+                        <FaPhoneAlt />
+                    </a>
+                </div>
             </main>
             <div id="footer-placeholder"></div>
-            <Footer />
+            <div className="about">
+            <p>
+                <a href="https://www.facebook.com/Interior.luxus" target="_blank" rel="noopener noreferrer">Facebook</a>
+              
+            </p>
+            <p>&copy; LUXUS 2024</p>
+        </div>
         </>
     );
 }
