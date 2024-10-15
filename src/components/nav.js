@@ -44,7 +44,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Brand Logo"
-            style={{ width: '140px', height: '50px' }}
+            style={{ width: '150px', height: '40px' }}
           />
         </a>
         <button
