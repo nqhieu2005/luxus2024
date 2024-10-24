@@ -132,3 +132,14 @@ body {
         display: none;
     }
 }
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+      height: auto; /* Cho phép navbar co giãn tự động dựa trên nội dung */
+    }
+  
+    .navbar-toggler {
+      /* background-color: #333; */
+      color: white;
+    }
+  }

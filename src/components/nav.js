@@ -5,36 +5,19 @@ import logo from '../images/z5725037049407_9a59401620e8db106e00537f646305d9.jpg'
 
 const Navbar = () => {
   const [isExpanded, setIsExpanded] = useState(false); // Quản lý trạng thái mở/đóng menu
-  const [menuHeight, setMenuHeight] = useState('0vh'); // Chiều cao ban đầu của navbar-collapse
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Quản lý trạng thái mở/đóng dropdown
 
-  // Hàm toggle chiều cao khi nhấn vào "Dự án"
-  const handleProjectsClick = () => {
-    // Toggle chiều cao giữa 20vh và 40vh
-    if (menuHeight === '0vh' || menuHeight === '20vh') {
-      setMenuHeight('40vh'); // Mở rộng menu
-    } else {
-      setMenuHeight('20vh'); // Thu nhỏ menu lại
-    }
-  };
-
-  
   const handleToggleMenu = () => {
-    setIsExpanded(prevState => {
-      if (!prevState) {
-        
-        setMenuHeight('20vh');
-      } else {
-        
-        setMenuHeight('40vh');
-      }
-      return !prevState; // Toggle trạng thái
-    });
+    setIsExpanded(prevState => !prevState); // Toggle trạng thái menu
   };
 
-  // Hàm đóng menu khi nhấn vào nút "X"
+  const handleProjectsClick = () => {
+    setIsDropdownOpen(prevState => !prevState); // Toggle trạng thái dropdown Dự án
+  };
+
   const handleClose = () => {
     setIsExpanded(false);  // Đóng menu
-    setMenuHeight('0vh');  // Trở về chiều cao 0vh khi đóng
+    setIsDropdownOpen(false); // Đóng dropdown Dự án
   };
 
   return (
@@ -61,7 +44,6 @@ const Navbar = () => {
           className={`collapse navbar-collapse ${isExpanded ? 'show' : ''}`} // Đảm bảo menu toggle mượt mà
           id="navbarSupportedContent"
           style={{
-            height: menuHeight, // Thay đổi chiều cao của menu khi mở rộng
             transition: 'height 0.3s ease', // Mượt mà khi thay đổi chiều cao
           }}
         >
@@ -72,17 +54,17 @@ const Navbar = () => {
             <li className="nav-item">
               <a className="nav-link active" href="/about">Giới thiệu / About</a>
             </li>
-            <li className="nav-item dropdown">
+            <li className={`nav-item dropdown ${isDropdownOpen ? 'show' : ''}`}>
               <button
                 className="nav-link dropdown-toggle"
                 id="navbarDropdown"
                 data-bs-toggle="dropdown"
-                aria-expanded={isExpanded ? "true" : "false"}
-                // onClick={handleProjectsClick} // Gọi hàm khi nhấn vào "Dự án"
+                aria-expanded={isDropdownOpen ? "true" : "false"}
+                onClick={handleProjectsClick} // Gọi hàm khi nhấn vào "Dự án"
               >
                 Dự án / Projects
               </button>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <ul className={`dropdown-menu ${isDropdownOpen ? 'show' : ''}`} aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-item" href="/housing">Nhà ở / Housing</a></li>
                 <li><a className="dropdown-item" href="/commercial">Thương mại / Commercial</a></li>
                 <li><a className="dropdown-item" href="/office">Văn phòng / Office</a></li>

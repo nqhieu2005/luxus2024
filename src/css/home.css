@@ -89,6 +89,36 @@ main {
   .muiten-phai:hover {
     color: gray;
   }
+  /* CSS cho nút mũi tên trái */
+.muiten-trai,
+.muiten-phai {
+  background-color: rgba(0, 0, 0, 0.5); /* Nền đen trong suốt */
+  color: white; /* Màu chữ trắng */
+  border: none; /* Xóa viền mặc định */
+  
+  padding: 10px 15px; /* Khoảng cách bên trong */
+  font-size: 24px; /* Kích thước mũi tên */
+  cursor: pointer; /* Hiển thị con trỏ khi hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+  transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển đổi */
+}
+
+/* Hiệu ứng khi hover vào nút */
+.muiten-trai:hover,
+.muiten-phai:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Tăng độ đậm của nền khi hover */
+  transform: scale(1.1); /* Tăng kích thước nút khi hover */
+}
+
+/* Định vị nút mũi tên */
+.muiten-trai {
+  left: 10px; /* Khoảng cách so với lề trái */
+}
+
+.muiten-phai {
+  right: 10px; /* Khoảng cách so với lề phải */
+}
+
   @media (max-width: 768px) {
     .image-container {
         flex-direction: column; 
