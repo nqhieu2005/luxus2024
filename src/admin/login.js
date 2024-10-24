@@ -4,14 +4,12 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './login.css';
 
-
-function Login() {
+function Login({ setIsAuthenticated }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
-  // Tên người dùng và mật khẩu mặc định
   const defaultUsername = 'admin';
   const defaultPassword = 'tiendat123@LUXUS';
 
@@ -19,22 +17,23 @@ function Login() {
     e.preventDefault();
     setLoading(true);
 
-    // Kiểm tra thông tin đăng nhập
     if (username === defaultUsername && password === defaultPassword) {
       sessionStorage.setItem('isLoggedIn', 'true');
-      
+      setIsAuthenticated(true); // Cập nhật trạng thái xác thực
+
       toast.success('Đăng nhập thành công!');
-      console.log("success");
       
+      // Điều hướng sau một khoảng delay để đảm bảo render kịp
       setTimeout(() => {
         navigate('/admin/home');
-      }, 1000);  
+        setLoading(false);
+      }, 1000);  // Đợi 1 giây rồi điều hướng
     } else {
       toast.error('Sai tài khoản hoặc mật khẩu.');
+      setLoading(false);
     }
-
-    setLoading(false);
-};
+  };
+  
 
 
   return (
@@ -48,6 +47,7 @@ function Login() {
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="form-control"
+            autoComplete="username"
             required
           />
         </div>
@@ -58,6 +58,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="form-control"
+            autoComplete="username"
             required
           />
         </div>

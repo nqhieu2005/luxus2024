@@ -1,6 +1,7 @@
 import './App.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import LuxusInterior from './components/home';
 import About from './components/about';
 import CompanyInfo from './components/contact';
@@ -18,10 +19,12 @@ import NotFound from './admin/notfound';
 import AddHome from './admin/addHome';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-
-const isAuthenticated = sessionStorage.getItem('isLoggedIn') === 'true';
-
+  useEffect(() => {
+    const loggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+    setIsAuthenticated(loggedIn);
+  }, []);
 
   return (
     <div className="App">
@@ -39,7 +42,7 @@ const isAuthenticated = sessionStorage.getItem('isLoggedIn') === 'true';
           <Route path="/office/:id" element={<OfficeDetail />} />
 
           {/* Bảo vệ các trang admin */}
-          <Route path="/admin" element={<Login />} />
+          <Route path="/admin" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
           <Route 
             path="/admin/home" 
             element={isAuthenticated ? <AdminHome /> : <Navigate to="/admin" replace />} 
@@ -52,7 +55,6 @@ const isAuthenticated = sessionStorage.getItem('isLoggedIn') === 'true';
             path="/admin/add/:type" 
             element={isAuthenticated ? <AddProduct /> : <Navigate to="/admin" replace />} 
           />
-
       
           <Route path="*" element={<NotFound />} />
         </Routes>
