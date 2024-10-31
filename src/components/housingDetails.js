@@ -10,6 +10,8 @@ function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(null); // Quản lý ảnh được chọn
+  const [isModalOpen, setIsModalOpen] = useState(false); // Quản lý trạng thái của modal
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -27,6 +29,16 @@ function ProductDetail() {
 
     fetchProduct();
   }, [id]);
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   if (loading) {
     return (
@@ -76,23 +88,31 @@ function ProductDetail() {
             </div>
 
             <div className="section-main-image">
-              <img src={product.gallery[0]} alt={product.name} />
+              <img src={product.gallery[0]} alt={product.name} onClick={() => openModal(product.gallery[0])} />
             </div>
           </div>
 
           {/* Section 3: Full Width Image */}
           <div className="section section-full-image">
-            <img src={product.gallery[1]} alt="Full Width" />
+            <img src={product.gallery[1]} alt="Full Width" onClick={() => openModal(product.gallery[1])} />
           </div>
 
           {/* Section 4: Additional Images */}
           <div className="section section-additional">
             {product.gallery.slice(2).map((image, index) => (
-              <img key={index} src={image} alt={`Additional  ${index + 1}`} />
+              <img key={index} src={image} alt={`Additional ${index + 1}`} onClick={() => openModal(image)} />
             ))}
           </div>
 
         </div>
+
+        {/* Modal */}
+        {isModalOpen && (
+          <div className="modal" onClick={closeModal}>
+            <span className="close">&times;</span>
+            <img className="modal-content" src={selectedImage} alt="Selected" />
+          </div>
+        )}
       </div>
       <Footer />
     </div>
