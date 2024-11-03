@@ -75,14 +75,14 @@ function ProductDetail() {
                 <div className="details-item">
                   <p><strong>Địa điểm:</strong> {product.location}</p>
                 </div>
-                <div className="details-item">
+                {/* <div className="details-item">
                   <p><strong>Diện tích mặt sàn:</strong> {product.floorArea}</p>
-                </div>
+                </div> */}
                 <div className="details-item">
                   <p><strong>Công năng:</strong> {product.functionality}</p>
                 </div>
                 <div className="description-divider">
-                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
                 </div>
                 <div className="details-item">
                   <p><strong></strong> {product.description}</p>

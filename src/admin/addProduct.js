@@ -36,7 +36,7 @@ function AddProduct() {
             description: document.getElementById('product-description').value,
             budget: document.getElementById('product-budget').value,
             location: document.getElementById('product-location').value,
-            floorArea: document.getElementById('product-floor-area').value,
+            // floorArea: document.getElementById('product-floor-area').value,
             functionality: document.getElementById('product-functionality').value,
             gallery: urls,
             type: productType,
@@ -147,10 +147,10 @@ function AddProduct() {
           <label>Vị Trí</label>
           <input type='text' id='product-location' className="form-control" placeholder="Enter the location" />
         </div>
-        <div className="form-group mb-3">
+        {/* <div className="form-group mb-3">
           <label>Diện Tích</label>
           <input type='text' id='product-floor-area' className="form-control" placeholder="Enter the floor area" />
-        </div>
+        </div> */}
         <div className="form-group mb-3">
           <label>Công Năng</label>
           <input type='text' id='product-functionality' className="form-control" placeholder="Enter the functionality" />

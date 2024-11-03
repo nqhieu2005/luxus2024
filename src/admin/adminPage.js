@@ -81,7 +81,7 @@ const AdminHome = () => {
         {!loading && !error && (
           <>
             <section className={!loading && !error ? '' : 'hide-content'}>
-              <h2>Products</h2>
+              <h2>Housings</h2>
               <button onClick={() => handleAdd('products')}>Thêm sản phẩm</button>
               <ul className='admin-ul'>
                 {data.products.map((product) => (

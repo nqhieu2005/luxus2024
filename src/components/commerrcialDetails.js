@@ -10,6 +10,18 @@ function CommercialDetail() {
   const { id } = useParams();
   const [commercial, setCommercial] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState(null); // Quản lý ảnh được chọn
+  const [isModalOpen, setIsModalOpen] = useState(false); // Quản lý trạng thái của modal
+
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
 
   useEffect(() => {
     const fetchCommercial = async () => {
@@ -63,35 +75,44 @@ function CommercialDetail() {
                 <div className="details-item">
                   <p><strong>Địa điểm:</strong> {commercial.location}</p>
                 </div>
-                <div className="details-item">
+                {/* <div className="details-item">
                   <p><strong>Diện tích mặt sàn:</strong> {commercial.floorArea}</p>
-                </div>
+                </div> */}
                 <div className="details-item">
                   <p><strong>Công năng:</strong> {commercial.functionality}</p>
                 </div>
+                <div className="description-divider">
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                </div>
                 <div className="details-item">
-                  <p><strong>Mô tả:</strong> {commercial.description}</p>
+                  <p><strong></strong> {commercial.description}</p>
                 </div>
               </div>
             </div>
             <div className="section-main-image">
-              <img src={commercial.gallery[0]} alt={commercial.name} />
+              <img src={commercial.gallery[0]} alt={commercial.name} onClick={() => openModal(commercial.gallery[0])}  />
             </div>
           </div>
 
           {/* Section 3: Full Width Image */}
           <div className="section section-full-image">
-            <img src={commercial.gallery[1]} alt="Full Width" />
+            <img src={commercial.gallery[1]} alt="Full Width" onClick={() => openModal(commercial.gallery[0])}  />
           </div>
 
           {/* Section 4: Additional Images */}
           <div className="section section-additional">
             {commercial.gallery.slice(2).map((image, index) => (
-              <img key={index} src={image} alt={`Additional  ${index + 1}`} />
+              <img key={index} src={image} alt={`Additional  ${index + 1}`} onClick={() => openModal(image)}/>
             ))}
           </div>
 
         </div>
+        {isModalOpen && (
+          <div className="modal" onClick={closeModal}>
+            <span className="close">&times;</span>
+            <img className="modal-content" src={selectedImage} alt="Selected" />
+          </div>
+        )}
       </div>
       <Footer />
     </div>

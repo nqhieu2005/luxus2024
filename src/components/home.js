@@ -90,13 +90,13 @@ const LuxusInterior = () => {
               />
             ))}
             {/* Nút mũi tên trái */}
-            <button className="muiten-trai position-absolute top-50 start-0 translate-middle-y" onClick={handlePrev}>
-              &lt; {/* Mũi tên trái */}
-            </button>
-            {/* Nút mũi tên phải */}
-            <button className="muiten-phai position-absolute top-50 end-0 translate-middle-y" onClick={handleNext}>
-              &gt; {/* Mũi tên phải */}
-            </button>
+            <button className="swiper-button-next swiper-button-white" onClick={handleNext}>
+  &gt; {/* Mũi tên phải */}
+</button>
+<button className="swiper-button-prev swiper-button-white" onClick={handlePrev}>
+  &lt; {/* Mũi tên trái */}
+</button>
+
           </>
         ) : (
           <div className="no-images">No images available</div>

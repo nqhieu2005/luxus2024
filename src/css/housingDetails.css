@@ -149,6 +149,15 @@
   .description-title {
     margin-top: 10px; /* Khoảng cách trên chữ "Mô tả" */
   }
+
+  /* Áp dụng riêng cho phần Công năng để đảm bảo xuống dòng */
+.details-item:nth-child(3) p {
+    max-width: 80%; /* Giới hạn chiều rộng để văn bản không tràn ra ảnh */
+    white-space: normal; /* Cho phép xuống dòng */
+    word-break: break-word; /* Ngắt từ nếu cần */
+    overflow-wrap: break-word;
+}
+
   
 
 
