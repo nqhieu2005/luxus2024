@@ -81,8 +81,11 @@ function ProductDetail() {
                 <div className="details-item">
                   <p><strong>Công năng:</strong> {product.functionality}</p>
                 </div>
+                <div className="description-divider">
+                  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                </div>
                 <div className="details-item">
-                  <p><strong>Mô tả:</strong> {product.description}</p>
+                  <p><strong></strong> {product.description}</p>
                 </div>
               </div>
             </div>

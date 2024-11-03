@@ -123,6 +123,12 @@
   color: #666;
   line-height: 1.5;
 }
+.product-items .product-item:last-child {
+  margin-bottom: 75px !important; 
+}
+.details-item p {
+  white-space: pre-line;
+}
 
 @media (max-width: 768px) {
   .product-items {

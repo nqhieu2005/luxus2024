@@ -140,6 +140,15 @@
     font-weight: bold;
     cursor: pointer;
   }
+  .description-divider {
+    text-align: center;
+    color: #888;
+    margin-bottom: 10px; /* Khoảng cách dưới dòng gạch ngang */
+  }
+  
+  .description-title {
+    margin-top: 10px; /* Khoảng cách trên chữ "Mô tả" */
+  }
   
 
 
