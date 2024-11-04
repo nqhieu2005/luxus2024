@@ -96,7 +96,7 @@ function CommercialDetail() {
 
           {/* Section 3: Full Width Image */}
           <div className="section section-full-image">
-            <img src={commercial.gallery[1]} alt="Full Width" onClick={() => openModal(commercial.gallery[0])}  />
+            <img src={commercial.gallery[1]} alt="Full Width" onClick={() => openModal(commercial.gallery[1])}  />
           </div>
 
           {/* Section 4: Additional Images */}
