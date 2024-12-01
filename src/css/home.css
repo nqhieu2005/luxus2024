@@ -91,31 +91,37 @@ main {
   }
   /* CSS cho nút mũi tên trái */
   .swiper-button-next,
-  .swiper-button-prev {
-    background: transparent; /* Nền trong suốt */
-    border: none; /* Không có viền */
-    color: white; /* Màu mũi tên */
-    font-size: 34px; /* Kích thước mũi tên */
-    cursor: pointer; /* Con trỏ hình tay */
-    position: absolute; /* Để định vị nút */
-    top: 50%; /* Đặt nút ở giữa theo chiều dọc */
-    transform: translateY(-50%); /* Canh giữa theo chiều dọc */
-    transition: color 0.3s; /* Hiệu ứng chuyển màu */
-    font-weight: normal;
-  }
-  
-  .swiper-button-next {
-    right: 10px; /* Khoảng cách từ bên phải */
-  }
-  
-  .swiper-button-prev {
-    left: 10px; /* Khoảng cách từ bên trái */
-  }
-  
-  .swiper-button-next:hover,
-  .swiper-button-prev:hover {
-    opacity: 0.8; /* Hiệu ứng mờ khi di chuột */
-  }
+.swiper-button-prev {
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ */
+    color: white; /* Màu chữ trắng */
+    border: none;
+    border-radius: 50%; /* Nút tròn */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Tăng độ mờ khi hover */
+}
+
   
 
   @media (max-width: 768px) {
@@ -129,10 +135,11 @@ main {
         /* padding-bottom: 90px; */
     }
 
-    .muiten-trai,
-    .muiten-phai {
-        display: none; 
-    }
+    .swiper-button-next.swiper-button-white,
+.swiper-button-prev.swiper-button-white {
+    display: none !important;
+}
+
     /*fotter*/
     .about{
         width: 100%;
