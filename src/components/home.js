@@ -50,7 +50,7 @@ const LuxusInterior = () => {
     }
 
     if (images.length > 0) {
-      intervalId = setInterval(showNextImage, 5000);
+      intervalId = setInterval(showNextImage, 3000);
     }
 
     return () => {
